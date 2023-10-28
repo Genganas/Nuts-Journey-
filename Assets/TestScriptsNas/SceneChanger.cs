@@ -31,23 +31,23 @@ public class SceneChanger : MonoBehaviour
         Application.Quit();
     }
 
-    public void CHeckpointRace() // Loads the checkpoint race
-    {
-        SceneManager.LoadScene("CheckPointRace");
-    }
-    public void BeginnerRace() // Loads the advanced race
-    {
-        SceneManager.LoadScene("BeginnerRace");
-    }
-    public void CHeckpointDialogue() // Loads the chekpoint race dialogue
-    {
-        SceneManager.LoadScene("CheckPointDialogue");
-    }
+    //public void CHeckpointRace() // Loads the checkpoint race
+    //{
+    //    SceneManager.LoadScene("CheckPointRace");
+    //}
+    //public void BeginnerRace() // Loads the advanced race
+    //{
+    //    SceneManager.LoadScene("BeginnerRace");
+    //}
+    //public void CHeckpointDialogue() // Loads the chekpoint race dialogue
+    //{
+    //    SceneManager.LoadScene("CheckPointDialogue");
+    //}
 
-    public void BeginnerDialogue() // Loads the beginner race dialogue
-    {
-        SceneManager.LoadScene("BeginnerRaceDialogue");
-    }
+    //public void BeginnerDialogue() // Loads the beginner race dialogue
+    //{
+    //    SceneManager.LoadScene("BeginnerRaceDialogue");
+    //}
 
     public void AdvancedDialogue() // Loads the advanced race dialogue
     {
