@@ -6,7 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void GameplayScene()  //Loads the Game or scene which the game will start with
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
     public void HelpScene()  //Loads the Game or scene which the game will start with
     {
@@ -34,6 +34,12 @@ public class SceneChanger : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //IEnumerator PressDelay()
+    //{
+    //    audio_Manager.ActivateAudioSource(gameObject.GetComponent<AudioSource>());
+    //    yield return new WaitForSeconds(0.05f);
+    //}
 
     //public void CHeckpointRace() // Loads the checkpoint race
     //{
