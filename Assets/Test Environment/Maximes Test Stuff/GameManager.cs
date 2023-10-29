@@ -276,7 +276,7 @@ public class GameManager : MonoBehaviour
             statsloaded = true;
             //sets character stats immediately
             CharacterRandomStartStats();
-            //SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("GameScene");
         }
 
     }
