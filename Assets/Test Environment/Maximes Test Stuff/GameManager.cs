@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,15 +21,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int characterMaxRiskFactor;
     [SerializeField] private int characterMaxHappiness;
 
+    [Header("Genreal")]
+    [SerializeField] GameObject GameManagerObj;
+    [SerializeField] GameManagerUI gameManagerUI;
+
     //Awake is called as the script activates
     private void Awake()
     {
         //sets character stats immediately
-        CharacterRandomStartStats();  
+        CharacterRandomStartStats();
+
+
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Test Scene")
+        {
+            gameManagerUI = GameManagerObj.GetComponent<GameManagerUI>();
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+        // Start is called before the first frame update
+        void Start()
     {
         
     }
@@ -46,18 +58,13 @@ public class GameManager : MonoBehaviour
 
     void PlayerRealWordLocation()
     {
-        if (userLocationBool == true)
-        {
-            userLocation = "Urban";
-        }
-        else
-        {
-            userLocation = "Rural";
-        }
+        userLocation = gameManagerUI.userLocation.ToString();
     }
 
-    void PlayerSex()
+    void UserSex()
     {
+        userSexInt = gameManagerUI.userSexInt;
+
         switch (userSexInt)
         {
             case 0:
@@ -78,9 +85,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PlayerAge()
+    void UserAge()
     {
-
+        userAge = gameManagerUI.userAgeInt;
     }
 
     void CharacterStatMax()
