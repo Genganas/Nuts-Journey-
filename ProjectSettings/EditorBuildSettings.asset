@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/NasserScenes/MainMenu.unity
     guid: 044cc918799203748831b1812e82507b
   - enabled: 1
-    path: Assets/NasserScenes/CharacterCreate.unity
+    path: Assets/NasserScenes/HelpScene.unity
     guid: f96561750339e4f4792ca5c969f6a40f
   - enabled: 1
     path: Assets/NasserScenes/GameScene.unity

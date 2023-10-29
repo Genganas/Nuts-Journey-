@@ -8,6 +8,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void HelpScene()  //Loads the Game or scene which the game will start with
+    {
+        SceneManager.LoadScene("HelpScene");
+    }
     public void OptionsScene()// Loads the Options scene
     {
         SceneManager.LoadScene("OptionsMenu");
