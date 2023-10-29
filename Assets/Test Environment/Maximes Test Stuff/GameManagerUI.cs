@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerUI : MonoBehaviour
 {
     [SerializeField] TMP_InputField userAge;
-    [SerializeField] TMP_Text warningText;
+    //[SerializeField] TMP_Text warningText;
 
     [SerializeField] public int userAgeInt;
     [SerializeField] string userAgeString;
@@ -23,7 +23,7 @@ public class GameManagerUI : MonoBehaviour
     [SerializeField] private bool sexDone;
 
     [SerializeField] public int CharacterSexInt;
-    [SerializeField] public bool readyToPlay;
+    [SerializeField] public bool readyToPlay = false;
 
 
 
@@ -35,8 +35,8 @@ public class GameManagerUI : MonoBehaviour
 
         Scene scene = SceneManager.GetActiveScene();
 
-        warningText.enabled = false;
-        if (scene.name == "CharacterCreate")
+       // warningText.enabled = false;
+        if (scene.name == "CharacterCreationScene")
         {
             sexHud.SetActive(true);
 
@@ -56,7 +56,7 @@ public class GameManagerUI : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (scene.name == "CharacterCreate")
+        if (scene.name == "CharacterCreationScene")
         {
             //converting player input into a string
             userAgeString = userAge.text;
@@ -64,12 +64,12 @@ public class GameManagerUI : MonoBehaviour
             if (int.TryParse(userAgeString, out userAgeInt))
             {
                 userAgeInt = int.Parse(userAgeString);
-                warningText.enabled = false;
+                //warningText.enabled = false;
             }
             else
             {
-                warningText.enabled = true;
-                warningText.text = "Enter an age please";
+               // warningText.enabled = true;
+                //warningText.text = "Enter an age please";
             }
 
 
@@ -128,7 +128,7 @@ public class GameManagerUI : MonoBehaviour
         locationDone = true;
     }
 
-    public void ButtonPressCharacterHUD()
+    public void ButtonPressAgeDoneHUD()
     {
         ageDone = true;
         ageHud.SetActive(false);
