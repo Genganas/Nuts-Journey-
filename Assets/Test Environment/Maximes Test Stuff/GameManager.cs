@@ -4,22 +4,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("User Info")]
-    [SerializeField] private string userLocation;
+    [SerializeField] public string userLocation;
     [SerializeField] private bool userLocationBool;
-    [SerializeField] private string userSex;
-    [SerializeField] private int userSexInt;
-    [SerializeField] private int userAge;
+    [SerializeField] public string userSex;
+    [SerializeField] public int userSexInt;
+    [SerializeField] public int userAge;
 
     [Header("Character")]
     [SerializeField] private string characterName;
-    [SerializeField] private int characterSex;
-    [SerializeField] private int characterHealth;
-    [SerializeField] private int characterRiskFactor;
-    [SerializeField] private int characterHappiness;
+    [SerializeField] private  int characterSex;
+    [SerializeField] private  int characterHealth;
+    [SerializeField] private  int characterRiskFactor;
+    [SerializeField] private  int characterHappiness;
 
-    [SerializeField] private int characterMaxHealth;
-    [SerializeField] private int characterMaxRiskFactor;
-    [SerializeField] private int characterMaxHappiness;
+    [SerializeField] private  int characterMaxHealth;
+    [SerializeField] private  int characterMaxRiskFactor;
+    [SerializeField] private  int characterMaxHappiness;
 
     [Header("Genreal")]
     [SerializeField] GameObject GameManagerObj;
@@ -33,13 +33,14 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(Instance);
         }
         else
         {
             Destroy(Instance);
         }
 
-        DontDestroyOnLoad(gameObject);
+
 
         Scene scene = SceneManager.GetActiveScene();
 
@@ -60,8 +61,10 @@ public class GameManager : MonoBehaviour
         CharacterStatMax();
         CharacterSexChoice();
 
-        loadGameScene();
+        UserInformation();
 
+        loadGameScene();
+        
     }
 
     void PlayerRealWordLocation()
@@ -285,6 +288,34 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void UserInformation()
+    {
+        userAge = gameManagerUI.userAgeInt;
+        
+        if(gameManagerUI.userSexInt == 0)
+        {
+            userSex = "Male";
+            userSexInt = 0;
+        }
+        else
+        {
+            if (gameManagerUI.userSexInt == 1)
+            {
+                userSex = "Female";
+                userSexInt = 1;
+            }
+        }
+
+       if(gameManagerUI.userLocation == 0)
+        {
+            userLocation = "Urban";
+
+        }
+        else
+        {
+            userLocation = "Rurual";
+        }
+    }
 
 
 }//end of script

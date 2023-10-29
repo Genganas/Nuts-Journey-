@@ -25,8 +25,14 @@ public class GameManagerUI : MonoBehaviour
     [SerializeField] public int CharacterSexInt;
     [SerializeField] public bool readyToPlay;
 
+
+
     private void Awake()
     {
+
+
+        DontDestroyOnLoad(gameObject);
+
         Scene scene = SceneManager.GetActiveScene();
 
         warningText.enabled = false;
@@ -132,13 +138,13 @@ public class GameManagerUI : MonoBehaviour
     {
         CharacterSexInt = 0;
 
-        readyToPlay = true;
+       // readyToPlay = true;
     }
     public void ButtonPressCharSexChoiceFemale()
     {
         CharacterSexInt = 1;
 
-        readyToPlay = true;
+        // readyToPlay = true;
 
     }
     public void ButtonPressCharSexChoiceRandom()
@@ -146,6 +152,6 @@ public class GameManagerUI : MonoBehaviour
 
         CharacterSexInt = Random.Range(0, 2);
 
-        readyToPlay = true;
+        // readyToPlay = true;
     }
 }
