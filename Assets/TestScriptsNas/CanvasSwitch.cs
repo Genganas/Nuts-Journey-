@@ -1,37 +1,37 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour
+public class CanvasSwitch : MonoBehaviour
 {
     public GameObject mainMenuCanvas;
-    public GameObject gameCanvas;
+    public GameObject optionCanvas;
     public GameObject helpCanvas; 
 
     private void Start()
     {
         mainMenuCanvas.SetActive(true);
-        gameCanvas.SetActive(false);
+        optionCanvas.SetActive(false);
         helpCanvas.SetActive(false);
     }
 
     public void MainMenu()
     {
         mainMenuCanvas.SetActive(true);
-        gameCanvas.SetActive(false);
+        optionCanvas.SetActive(false);
         helpCanvas.SetActive(false);
     }
 
-    public void GameScene()
+    public void OptionScreen()
     {
         mainMenuCanvas.SetActive(false);
-        gameCanvas.SetActive(true);
+        optionCanvas.SetActive(true);
         helpCanvas.SetActive(false);
     }
 
     public void HelpScreen()
     {
         mainMenuCanvas.SetActive(false);
-        gameCanvas.SetActive(false);
+        optionCanvas.SetActive(false);
         helpCanvas.SetActive(true);
     }
 

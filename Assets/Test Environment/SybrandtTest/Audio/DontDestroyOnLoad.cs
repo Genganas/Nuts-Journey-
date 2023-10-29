@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
+    [HideInInspector]
     public string objectID;
 
     private void Awake()
