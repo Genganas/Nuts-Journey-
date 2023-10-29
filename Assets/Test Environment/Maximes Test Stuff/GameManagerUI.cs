@@ -15,51 +15,70 @@ public class GameManagerUI : MonoBehaviour
     [SerializeField] private GameObject sexHud;
     [SerializeField] private GameObject locationHud;
     [SerializeField] private GameObject ageHud;
+    [SerializeField] private GameObject CharacterHud;
+
 
     [SerializeField] private bool ageDone;
     [SerializeField] private bool locationDone;
     [SerializeField] private bool sexDone;
 
+    [SerializeField] public int CharacterSexInt;
+    [SerializeField] public bool readyToPlay;
+
     private void Awake()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
         warningText.enabled = false;
+        if (scene.name == "CharacterCreate")
+        {
+            sexHud.SetActive(true);
 
-        sexHud.SetActive(true);
-        locationHud.SetActive(false);
-        ageHud.SetActive(false);
+            locationHud.SetActive(false);
+            ageHud.SetActive(false);
+            CharacterHud.SetActive(false);
 
-        ageDone = false;
-        locationDone = false;
-        sexDone = false;
+            ageDone = false;
+            locationDone = false;
+            sexDone = false;
+        }
+
+
     }
     // Update is called once per frame
     void Update()
     {
-        //converting player input into a string
-        userAgeString = userAge.text;
-        //converting string into an int if it is numerical values in the string
-        if (int.TryParse(userAgeString, out userAgeInt))
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "CharacterCreate")
         {
-            userAgeInt = int.Parse(userAgeString);
-            warningText.enabled = false;
-        }
-        else
-        {
-            warningText.enabled = true;
-            warningText.text = "Enter an age please";
-        }
+            //converting player input into a string
+            userAgeString = userAge.text;
+            //converting string into an int if it is numerical values in the string
+            if (int.TryParse(userAgeString, out userAgeInt))
+            {
+                userAgeInt = int.Parse(userAgeString);
+                warningText.enabled = false;
+            }
+            else
+            {
+                warningText.enabled = true;
+                warningText.text = "Enter an age please";
+            }
 
 
-        
-        if(sexDone == true)
-        {
-            locationHud.SetActive(true);
+
+            if (sexDone == true && locationDone == false)
+            {
+                locationHud.SetActive(true);
+            }
+
+            if (locationDone == true && ageDone == false)
+            {
+                ageHud.SetActive(true);
+            }
         }
 
-        if(ageDone == true)
-        {
-            ageHud.SetActive(true);
-        }
 
     }
 
@@ -101,8 +120,32 @@ public class GameManagerUI : MonoBehaviour
         locationDone = true;
     }
 
-    public void ButtonGoNext()
+    public void ButtonPressCharacterHUD()
     {
-        SceneManager.LoadScene("SampleScene");
+        ageDone = true;
+        ageHud.SetActive(false);
+
+        CharacterHud.SetActive(true);
+    }
+
+    public void ButtonPressCharSexChoiceMale()
+    {
+        CharacterSexInt = 0;
+
+        readyToPlay = true;
+    }
+    public void ButtonPressCharSexChoiceFemale()
+    {
+        CharacterSexInt = 1;
+
+        readyToPlay = true;
+
+    }
+    public void ButtonPressCharSexChoiceRandom()
+    {
+
+        CharacterSexInt = Random.Range(0, 2);
+
+        readyToPlay = true;
     }
 }

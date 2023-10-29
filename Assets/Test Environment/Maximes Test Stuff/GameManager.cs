@@ -24,21 +24,28 @@ public class GameManager : MonoBehaviour
     [Header("Genreal")]
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] GameManagerUI gameManagerUI;
+    
+    public static GameManager Instance;
 
     //Awake is called as the script activates
     private void Awake()
     {
-        //sets character stats immediately
-        CharacterRandomStartStats();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
 
-
+        DontDestroyOnLoad(gameObject);
 
         Scene scene = SceneManager.GetActiveScene();
 
-        if (scene.name == "Test Scene")
-        {
-            gameManagerUI = GameManagerObj.GetComponent<GameManagerUI>();
-        }
+
+        gameManagerUI = GameManagerObj.GetComponent<GameManagerUI>();
+
     }
 
         // Start is called before the first frame update
@@ -51,8 +58,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CharacterStatMax();
-        CharacterSexRandomChoice();
+        CharacterSexChoice();
 
+        loadGameScene();
 
     }
 
@@ -252,22 +260,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CharacterSexChoiceMale()
+    void CharacterSexChoice()
     {
-        characterSex = 0;
-    }
-
-    void CharacterSexChoiceFemale()
-    {
-        characterSex = 1;
-    }
-
-    void CharacterSexRandomChoice()
-    {
-        if (characterSex != 0 || characterSex != 1 )
+        if(gameManagerUI.CharacterSexInt == 0)
         {
-            characterSex = Random.Range(1, 2);
+            characterSex = 0;
+        }
+        else if( gameManagerUI.CharacterSexInt == 1)
+        {
+            characterSex = 1;
         }
     }
+    
+    void loadGameScene()
+    {
+        if(gameManagerUI.readyToPlay == true)
+        {
+            //sets character stats immediately
+            CharacterRandomStartStats();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+
+
+    }
+
+
 
 }//end of script
