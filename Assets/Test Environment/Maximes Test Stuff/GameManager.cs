@@ -24,21 +24,14 @@ public class GameManager : MonoBehaviour
     [Header("Genreal")]
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] GameManagerUI gameManagerUI;
+    [SerializeField] private bool statsloaded = false;
     
-    public static GameManager Instance;
+   
 
     //Awake is called as the script activates
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(Instance);
-        }
-        else
-        {
-            Destroy(Instance);
-        }
+        DontDestroyOnLoad(gameObject);
 
 
 
@@ -277,8 +270,10 @@ public class GameManager : MonoBehaviour
     
     void loadGameScene()
     {
-        if(gameManagerUI.readyToPlay == true)
+        if(gameManagerUI.readyToPlay == true && statsloaded == false)
         {
+
+            statsloaded = true;
             //sets character stats immediately
             CharacterRandomStartStats();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

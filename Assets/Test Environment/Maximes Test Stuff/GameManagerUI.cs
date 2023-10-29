@@ -86,6 +86,8 @@ public class GameManagerUI : MonoBehaviour
         }
 
 
+
+
     }
 
     public void ButtonPressSexChoiceMale()
@@ -138,13 +140,13 @@ public class GameManagerUI : MonoBehaviour
     {
         CharacterSexInt = 0;
 
-       // readyToPlay = true;
+        readyToPlay = true;
     }
     public void ButtonPressCharSexChoiceFemale()
     {
         CharacterSexInt = 1;
 
-        // readyToPlay = true;
+         readyToPlay = true;
 
     }
     public void ButtonPressCharSexChoiceRandom()
@@ -152,6 +154,6 @@ public class GameManagerUI : MonoBehaviour
 
         CharacterSexInt = Random.Range(0, 2);
 
-        // readyToPlay = true;
+         readyToPlay = true;
     }
 }
