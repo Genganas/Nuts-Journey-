@@ -51,6 +51,7 @@ MonoBehaviour:
   userSexInt: 0
   userAge: 0
   characterName: 
+  characterAgeInt: 0
   characterSex: 0
   characterHealth: 0
   characterRiskFactor: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
   characterMaxHappiness: 100
   GameManagerObj: {fileID: 2087966038117019106}
   gameManagerUI: {fileID: 0}
+  statsloaded: 0
 --- !u!114 &2087966038117019110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +75,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userAge: {fileID: 0}
-  warningText: {fileID: 0}
   userAgeInt: 0
   userAgeString: 
   userSexInt: 0
@@ -81,6 +82,9 @@ MonoBehaviour:
   sexHud: {fileID: 0}
   locationHud: {fileID: 0}
   ageHud: {fileID: 0}
+  CharacterHud: {fileID: 0}
   ageDone: 0
   locationDone: 0
   sexDone: 0
+  CharacterSexInt: 0
+  readyToPlay: 0

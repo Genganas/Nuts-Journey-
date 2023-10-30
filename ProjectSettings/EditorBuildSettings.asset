@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NasserScenes/GameScene.unity
     guid: d19af777b8c9c7d45be3808926fe8909
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Test Environment/Maximes Test Stuff/Test Scene.unity
     guid: 171a9c9ee9a603546ae7e760a749ecb5
+  - enabled: 1
+    path: Assets/NasserScenes/CharacterCreationScene.unity
+    guid: 4228592751969844ba3a167dada70ee2
   m_configObjects: {}

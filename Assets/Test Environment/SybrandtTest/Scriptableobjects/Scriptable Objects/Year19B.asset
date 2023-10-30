@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33470c2054d5474c8a27664f73c4dcf, type: 3}
+  m_Name: Year19B
+  m_EditorClassIdentifier: 
+  lifeEvent:
+    eventName: Stress Week
+    eventContent: Your stress is at its peak. Do you You binge on junk food, binge-watching,
+      and stress shopping. Or do you take time for self-care, meditate, and engage
+      in stress-reducing activities.
+    eventOption1: Self care, moderation and self improvement
+    eventOption2: 'Binge TV shows and '
+    healthEffect: 0
+    riskEffect: 0
+    happienessEffect: 0
+    activeYear: 19

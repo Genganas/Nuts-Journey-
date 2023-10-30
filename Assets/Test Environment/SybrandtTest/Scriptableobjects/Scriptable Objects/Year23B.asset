@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33470c2054d5474c8a27664f73c4dcf, type: 3}
+  m_Name: Year23B
+  m_EditorClassIdentifier: 
+  lifeEvent:
+    eventName: The grass on the other side
+    eventContent: You have been given the opportunity to do a job overseas for a
+      period of a year. If you go, you will leave all your friends and family behind.
+    eventOption1: Go overseas
+    eventOption2: Stay here
+    healthEffect: 0
+    riskEffect: 0
+    happienessEffect: 0
+    activeYear: 23

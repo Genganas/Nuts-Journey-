@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33470c2054d5474c8a27664f73c4dcf, type: 3}
+  m_Name: Year24A
+  m_EditorClassIdentifier: 
+  lifeEvent:
+    eventName: Financial Choices
+    eventContent: You decide that it is time to better yourself. Do you go to expensive
+      therapy, or do you search online for ways to improve yourself.
+    eventOption1: Expensive Therapy
+    eventOption2: Online Self Help
+    healthEffect: 0
+    riskEffect: 0
+    happienessEffect: 0
+    activeYear: 24

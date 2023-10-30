@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Character")]
     [SerializeField] private string characterName;
+    [SerializeField] public int characterAgeInt;
     [SerializeField] private  int characterSex;
     [SerializeField] private  int characterHealth;
     [SerializeField] private  int characterRiskFactor;
@@ -118,9 +119,11 @@ public class GameManager : MonoBehaviour
         characterHappiness = Random.Range(45, 56);
         characterRiskFactor = Random.Range(0, 11);
         characterHealth = Random.Range(45, 56);
+        characterAgeInt = 15;
 
         //setting the charactername
         CharacterNameStorage();
+        
     }
 
     void CharacterNameStorage()

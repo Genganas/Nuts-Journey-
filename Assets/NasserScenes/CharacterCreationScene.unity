@@ -3465,7 +3465,14 @@ PrefabInstance:
       propertyPath: CharacterHud
       value: 
       objectReference: {fileID: 890800870}
-    m_RemovedComponents: []
+    - target: {fileID: 4706030281986210984, guid: 56e13b53d77c1bc4bb3631f780276cd2, type: 3}
+      propertyPath: gameManagerOBJ
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4706030281986210984, guid: 56e13b53d77c1bc4bb3631f780276cd2, type: 3}
+    - {fileID: 232643891051803966, guid: 56e13b53d77c1bc4bb3631f780276cd2, type: 3}
+    - {fileID: 5276921792536556028, guid: 56e13b53d77c1bc4bb3631f780276cd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56e13b53d77c1bc4bb3631f780276cd2, type: 3}
 --- !u!114 &882883914 stripped
 MonoBehaviour:

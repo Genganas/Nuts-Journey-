@@ -18,7 +18,7 @@ public class SceneChanger : MonoBehaviour
     }
     public void CharacterCreatorScene()// Loads the Options scene
     {
-        SceneManager.LoadScene("CharacterCreate");
+        SceneManager.LoadScene("CharacterCreationScene");
     }
     public void MainMenu() // Loads the menu scene
     {
