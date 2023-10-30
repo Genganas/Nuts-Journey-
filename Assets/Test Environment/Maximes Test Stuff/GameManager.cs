@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject GameManagerObj;
     [SerializeField] GameManagerUI gameManagerUI;
     [SerializeField] private bool statsloaded = false;
+
+    [Header("Life events")]
+    LifeEventsManager lifeEventsManager;
     
    
 
@@ -280,6 +283,10 @@ public class GameManager : MonoBehaviour
             //sets character stats immediately
             CharacterRandomStartStats();
             SceneManager.LoadScene("GameScene");
+
+            //lifeEventsManager = GameObject.Find("Life Events").GetComponent<LifeEventsManager>();
+            //lifeEventsManager.GetNewEvent(characterAgeInt);
+
         }
 
     }
@@ -313,5 +320,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void IncreaseAge()
+    {
+        characterAgeInt++;
+    }
 
 }//end of script

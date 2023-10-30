@@ -13,26 +13,41 @@ public class LEManager : MonoBehaviour
     [SerializeField] GameObject gameManagerOBJ;
     [SerializeField] GameManager gameManager;
 
+    [Header("UI")]
+    [SerializeField] UIManager uiManager;
+
 
     Event activeEvent;
+    private void Awake()
+    {
+        uiManager = GetComponent<UIManager>();
+    }
     private void Update()
     {
         Debug.Log("Seeking Game Manager");
-        gameManagerOBJ = GameObject.Find("GameManager");
-        gameManager = gameManagerOBJ.GetComponent<GameManager>();
 
-        age = gameManager.characterAgeInt;
-
-        activeEvent = lifeEventsManager.GetNewEvent(age);
-            Debug.Log(activeEvent.lifeEvent.eventName);
-            //StartCoroutine(Delay());
-
-
-
-
-
+        if(gameManagerOBJ == null ) 
+        {
+            gameManagerOBJ = GameObject.Find("GameManager");
+            gameManager = gameManagerOBJ.GetComponent<GameManager>();
+            SetAge();
+            activeEvent = lifeEventsManager.GetNewEvent(age);
+            uiManager.UpdateUI(activeEvent);
+        }
     }
 
+    public void SetAge()
+    {
+        age = gameManager.characterAgeInt;
+    }
+
+    public void OptionSelected()
+    {
+        gameManager.IncreaseAge();
+        SetAge();
+        activeEvent = lifeEventsManager.GetNewEvent(age);
+        uiManager.UpdateUI(activeEvent);
+    }
     //IEnumerator Delay()
     //{
     //    yield return new WaitForSeconds(5f);

@@ -12,14 +12,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI option1;
     [SerializeField] TextMeshProUGUI option2;
 
-
-
-    private void Update()
-    {
-
-
-    }
-
     public void UpdateUI(Event currentEvent)
     {
         eventName.text = currentEvent.lifeEvent.eventName;

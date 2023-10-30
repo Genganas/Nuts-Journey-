@@ -1525,6 +1525,7 @@ MonoBehaviour:
   lifeEventsManager: {fileID: 1029234122}
   gameManagerOBJ: {fileID: 0}
   gameManager: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!4 &1029234124
 Transform:
   m_ObjectHideFlags: 0
@@ -1700,7 +1701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1109948108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1029234123}
+        m_TargetAssemblyTypeName: LEManager, Assembly-CSharp
+        m_MethodName: OptionSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1109948108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2577,7 +2590,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1741708021}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1029234123}
+        m_TargetAssemblyTypeName: LEManager, Assembly-CSharp
+        m_MethodName: OptionSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1741708021
 MonoBehaviour:
   m_ObjectHideFlags: 0
